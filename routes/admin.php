@@ -13,3 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [\App\Http\Controllers\Admin\ProductsController::class, 'index'])->name('home');
+Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
